@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake News Detector</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0; /* Background color for the entire page */
+        }
+
+        #container {
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        #newsInput {
+            width: 80%;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        #submitBtn {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+
+        .fake-news {
+            background-color: #ff9999; /* Red background for fake news */
+        }
+
+        .real-news {
+            background-color: #99ff99; /* Green background for real news */
+        }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <input type="text" id="newsInput" placeholder="Enter news...">
+    <button id="submitBtn" onclick="checkFakeNews()">Check Fake News</button>
+    <div id="result"></div>
+</div>
+
+<script>
+    function checkFakeNews() {
+        var newsInput = document.getElementById("newsInput").value;
+        var resultDiv = document.getElementById("result");
+
+        // Perform fake news detection (dummy logic)
+        // You may replace this with a more sophisticated algorithm or use an external API
+        var isFakeNews = Math.random() < 0.5;
+
+        if (isFakeNews) {
+            resultDiv.innerText = "This news is FAKE!";
+            resultDiv.classList.add("fake-news");
+            resultDiv.classList.remove("real-news");
+        } else {
+            resultDiv.innerText = "This news is REAL!";
+            resultDiv.classList.add("real-news");
+            resultDiv.classList.remove("fake-news");
+        }
+    }
+</script>
+
+</body>
+</html>
